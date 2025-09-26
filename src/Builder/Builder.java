@@ -1,4 +1,4 @@
 package Builder;
 
-public class Builder {
+public interface Builder {
 }
