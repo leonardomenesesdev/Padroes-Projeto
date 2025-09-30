@@ -2,13 +2,17 @@ package Singleton;
 
 public class DBConn {
 
-    private DBConn() {}
 
     private static DBConn Instance;
+    String value;
 
-    public static DBConn getInstance() {
+    private DBConn(String value) {
+        this.value = value;
+    }
+
+    public static DBConn getInstance(String value) {
         if (Instance == null) {
-            Instance = new DBConn();
+            Instance = new DBConn(value);
         }
         return Instance;
     }
