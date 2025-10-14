@@ -2,13 +2,16 @@ package Prototype;
 
 public class MainPrototype {
     public static void main(String[] args) {
-        Pedido pedidoOriginal = new Pedido("Leonardo", "Rua A, 123", "Cartão de Crédito");
-        System.out.println("Pedido Original: " + pedidoOriginal);
+        Pedido pedidoOnline = new PedidoOnline("P001", 500.0, "Rua A, 123");
+        pedidoOnline.exibirInfo();
 
-        Pedido pedidoClone = pedidoOriginal.clone();
-        pedidoClone.setFormaPagamento("Dinheiro"); // altera só no clone
-        System.out.println("Pedido Clone: " + pedidoClone);
+        Pedido pedidoOnlineClone = pedidoOnline.clone();
+        pedidoOnlineClone.exibirInfo();
 
-        System.out.println("Pedido Original após clone: " + pedidoOriginal);
+        Pedido pedidoLoja = new PedidoLoja("P002", 300.0, "Carlos");
+        pedidoLoja.exibirInfo();
+
+        Pedido pedidoLojaClone = pedidoLoja.clone();
+        pedidoLojaClone.exibirInfo();
     }
 }
